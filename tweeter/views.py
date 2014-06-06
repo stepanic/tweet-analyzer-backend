@@ -33,6 +33,10 @@ def analyzer(request):
     sources =  request.POST.getlist("sources")
     how_many =  request.POST.getlist("how_many")
 
+    response_data['request_sources'] = sources
+    response_data['request_how_many'] = how_many
+
+
 
     '''
     BZIK TODO

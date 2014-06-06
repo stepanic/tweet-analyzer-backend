@@ -44,7 +44,7 @@ def analyzer(request):
     data je lista dictionarija koji u sebi imaju:
     tweet_id
     tweet_text
-    class_id
+    class_id - ovo je lista pri cemu je [SVM, Bayes, NN]
 
     '''
 
@@ -54,7 +54,40 @@ def analyzer(request):
     '''
     TODO zamijeniti
     '''
-    response_data['data'] = [{'tweet_id':1, 'tweet_text': 'prvi 123', 'class_id': 3}, {'tweet_id':2, 'tweet_text': 'drugi 123', 'class_id':0}]
+    response_data['data'] = [
+
+        {
+            'tweet_id':1,
+            'tweet_text': 'Ovo je tweet sa bla bla bla 123',
+            'class_id': [2,1,2]
+        },
+        {
+            'tweet_id':2,
+            'tweet_text': 'Ovo je tweet sa bla bla bla 123 56546 56',
+            'class_id': [1,1,2]
+        },
+        {
+            'tweet_id':3,
+            'tweet_text': 'frgtr tyery Ovo je tweet sa bla bla bla 123 98 0 90 89',
+            'class_id': [0,1,0]
+        },
+        {
+            'tweet_id':4,
+            'tweet_text': 'hki uy iuou iou io Ovo je tweet sa bla bla bla 123 34 2 312 67 87 987',
+            'class_id': [0,1,2]
+        },
+        {
+            'tweet_id':5,
+            'tweet_text': 'hki uy iuou iou io Oj ghj ghj ghjvo je tweet sa bla bla bla 123 34 2 312 67 87 987',
+            'class_id': [3,4,4]
+        },
+        {
+            'tweet_id':6,
+            'tweet_text': 'hki uy iuou idf gd fg df gdf gou io Oj ghj ghj ghjvo je tweet sa bla bla bla 123 34 2 312 67 87 987',
+            'class_id': [2,4,3]
+        }
+
+    ]
 
 
   return HttpResponse(json.dumps(response_data), content_type="application/json")
